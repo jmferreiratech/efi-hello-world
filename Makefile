@@ -51,12 +51,12 @@ OBJCOPYFLAGS    = -j .text \
 all: $(TARGET)
 
 hello.so: $(OBJS)
-    ld $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
+	ld $(LDFLAGS) $(OBJS) -o $@ $(LIBS)
 
 %.efi: %.so
-    objcopy $(OBJCOPYFLAGS) $^ $@
+	objcopy $(OBJCOPYFLAGS) $^ $@
 
 .PHONY:    clean
 
 clean:
-    rm -f $(OBJS) $(TARGET) hello.so
+	rm -f $(OBJS) $(TARGET) hello.so
